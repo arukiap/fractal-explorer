@@ -1,0 +1,58 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "windows": {
+                "args": [
+                    "-g",
+                    "*.cpp",
+                    "-I",
+                    "include\\",
+                    "-Llib",
+                    "-lglew32s",
+                    "-lSDL2main",
+                    "-lSDL2",
+                    "-o",
+                    "main.cpp.exe",
+                    "-lopengl32"
+                ],
+            },
+            "linux": {
+                "args": [
+                    "-g",
+                    "*.cpp",
+                    "-I",
+                    "include/",
+                    "-Llib",
+                    "-lGLEW",
+                    "-lSDL2main",
+                    "-lSDL2",
+                    "-o",
+                    "main.cpp.out",
+                    "-lOpenGL"
+                ],
+            },
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "windows": {
+                "command": ".\\main.cpp.exe",
+            },
+            "linux": {
+                "command": "./main.cpp.out",
+            },
+            "dependsOn":"build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
