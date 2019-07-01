@@ -4,6 +4,14 @@ Fractal Xplorer is a shader-based interactive 3D fractal generator.
 
 It is written in C++, using the OpenGL API and GLSL shading language.
 
+<div align="center">
+  <img src="img/fractals1.jpg"/>
+</div>
+
+<div align="center">
+  <img src="img/fractals2.jpg"/>
+</div>
+
 # Compiling and Running - For programmers
 
 In order to compile and run, run the following command in your console according to your operating system:
